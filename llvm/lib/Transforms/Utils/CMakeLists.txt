@@ -62,6 +62,7 @@ add_llvm_component_library(LLVMTransformUtils
   MatrixUtils.cpp
   MemoryOpRemark.cpp
   MemoryTaggingSupport.cpp
+  InversePlusMinus.cpp
   Mem2Reg.cpp
   MetaRenamer.cpp
   MisExpect.cpp
