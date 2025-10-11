@@ -21,7 +21,7 @@ namespace llvm
 
     class Function;
 
-    struct InversePlusMinusPass
+    struct InversePlusMinusPass : public PassInfoMixin<InversePlusMinusPass>
     {
       LLVM_ABI PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM);
     };

@@ -33,4 +33,5 @@ add_llvm_unittest(UtilsTests
   UnrollLoopTest.cpp
   ValueMapperTest.cpp
   ProfDataUtilTest.cpp
+  InversePlusMinusTest.cpp
   )

@@ -32,5 +32,7 @@ PreservedAnalyses InversePlusMinusPass::run(Function &F,
       }
     }
   }
+
+  return PreservedAnalyses::none();
 }
 } // namespace llvm
