@@ -9,6 +9,8 @@ namespace llvm
   PreservedAnalyses InversePlusMinusPass::run(Function &F,
                                               FunctionAnalysisManager &AM)
   {
+    if (F.getName() != "replace") { return PreservedAnalyses::all(); }
+
     std::vector<BinaryOperator *> instructions;
 
     for (auto &&BB : F)
@@ -40,8 +42,7 @@ namespace llvm
 
       auto newBinary = BinaryOperator::Create(newOpcode,
                                               instrPtr->getOperand(0),
-                                              instrPtr->getOperand(1),
-                                              instrPtr->getName());
+                                              instrPtr->getOperand(1));
       newBinary->copyMetadata(*instrPtr);
       ReplaceInstWithInst(instrPtr, newBinary);
     }
